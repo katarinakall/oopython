@@ -24,7 +24,7 @@ class TestDeck(unittest.TestCase):
     def test_shuffle_deck(self):
         """Test if shuffle method works"""
         first_card = self.deck.cards[0]
-        self.deck.shuffle()
+        self.deck.shuffle_deck()
         first_card_after_shuffle = self.deck.cards[0]
         self.assertNotEqual(first_card, first_card_after_shuffle)
 
