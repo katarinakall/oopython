@@ -65,17 +65,21 @@ class War():
         Compares two cards values
         """
         if cards[0].get_suit() == cards[1].get_suit():
-            if cards[0].get_value() > cards[0].get_value():
+            if cards[0].get_value() > cards[1].get_value():
                 print("{n} wins the round and picks up all cards.".format(n=self.players[0].name))
-                for card in self.card_stack:
-                    self.players[0].cards.append(card)
-                    self.card_stack = []
+                self.append_cards(0)
             else:
                 print("{n} wins the round and picks up all cards.".format(n=self.players[1].name))
-                for card in self.card_stack:
-                    self.players[1].cards.append(card)
-                    self.card_stack = []
+                self.append_cards(1)
             self.print_score()
+
+    def append_cards(self, player):
+        """
+        Appends stack of cards from round to players stack of cards.
+        """
+        for card in self.card_stack:
+            self.players[player].cards.append(card)
+            self.card_stack = []
 
 
     def print_score(self):
