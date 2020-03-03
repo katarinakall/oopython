@@ -13,6 +13,27 @@ class Card():
         self._suit = suit
         self._value = value
 
+    def get_value(self):
+        """
+        Returns the value of a card.
+        """
+        if self._value == 'Knight':
+            return 11
+        elif self._value == 'Queen':
+            return 12
+        elif self._value == 'King':
+            return 13
+        elif self._value == 'Ace':
+            return 14
+        else: 
+            return self._value 
+
+    def get_suit(self):
+        """
+        Returns the suit of a card
+        """
+        return self._suit
+
     def __repr__(self):
         """
         Returns the suit and value of a card.

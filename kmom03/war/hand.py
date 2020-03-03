@@ -13,4 +13,3 @@ class Hand():
         """
         self.name = name
         self.cards = cards
-        self.score = 0
